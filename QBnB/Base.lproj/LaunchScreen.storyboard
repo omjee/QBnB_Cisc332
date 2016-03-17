@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wall copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="vtw-tK-bJj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Qbnb logo copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Qr-hP-u1t">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Qr-hP-u1t" secondAttribute="height" multiplier="15:8" id="ng2-cx-xz4"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vtw-tK-bJj" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8E0-fb-0SY"/>
+                            <constraint firstAttribute="trailing" secondItem="vtw-tK-bJj" secondAttribute="trailing" id="B79-kZ-oOo"/>
+                            <constraint firstItem="vtw-tK-bJj" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="FPV-xN-6fn"/>
+                            <constraint firstItem="1Qr-hP-u1t" firstAttribute="centerY" secondItem="vtw-tK-bJj" secondAttribute="centerY" id="Pbx-fJ-PwR"/>
+                            <constraint firstItem="1Qr-hP-u1t" firstAttribute="width" secondItem="vtw-tK-bJj" secondAttribute="height" multiplier="2:5" id="ceC-xX-XwB"/>
+                            <constraint firstItem="vtw-tK-bJj" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="cfa-1B-mtO"/>
+                            <constraint firstItem="1Qr-hP-u1t" firstAttribute="centerX" secondItem="vtw-tK-bJj" secondAttribute="centerX" id="hs8-xQ-lg6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +45,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Qbnb logo copy.png" width="900" height="600"/>
+        <image name="wall copy.png" width="640" height="960"/>
+    </resources>
 </document>
