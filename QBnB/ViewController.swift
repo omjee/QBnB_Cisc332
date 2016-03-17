@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func LoginButton_TouchUpInside(sender: AnyObject) {
-        let uiav = UIAlertView.init(title: "Bonjour!", message: "Hello world. I finally got this damn UI to work! 😂", delegate: self, cancelButtonTitle: "Sure dude...");
+        let uiav = UIAlertView.init(title: "Bonjour!", message: "Hello world. I finally got this damn UI to work! 😂", delegate: self, cancelButtonTitle: "Yoloswag...");
     
         uiav.show();
         
