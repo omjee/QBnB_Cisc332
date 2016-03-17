@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QBnB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wall copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="UCt-lT-ca5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="Zsd-lP-MU5"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Zsd-lP-MU5"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rtr-2R-n6N" appends="YES" id="koJ-68-8aL"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Qbnb logo copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="PPR-Uw-JDk">
+                                <rect key="frame" x="180" y="35" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PPR-Uw-JDk" secondAttribute="height" multiplier="15:8" id="1KB-Wr-74l"/>
+                                    <constraint firstAttribute="width" secondItem="PPR-Uw-JDk" secondAttribute="height" multiplier="15:8" id="K8u-ql-wLz"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rtr-2R-n6N" appends="YES" id="aLo-e1-dRJ"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zfi-zQ-urP">
+                                <rect key="frame" x="156" y="171" width="289" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="tEg-9I-RAK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uvz-qF-OmH">
+                                <rect key="frame" x="156" y="209" width="289" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Sif-Vu-z9C"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ss2-vu-yXB">
+                                <rect key="frame" x="227" y="247" width="146" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="    Log In    ">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="focused">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoginButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W20-MZ-nyk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEE-fN-bbU">
+                                <rect key="frame" x="0.0" y="562" width="153" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="eBv-8I-fhy"/>
+                                </constraints>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7c-tS-Wl6">
+                                <rect key="frame" x="454" y="562" width="146" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="Bd4-wu-y0O"/>
+                                </constraints>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ss2-vu-yXB" firstAttribute="top" secondItem="Uvz-qF-OmH" secondAttribute="bottom" constant="8" id="24Y-v7-0WA"/>
+                            <constraint firstItem="Uvz-qF-OmH" firstAttribute="trailing" secondItem="Zfi-zQ-urP" secondAttribute="trailing" id="44m-W4-vgY"/>
+                            <constraint firstItem="Zfi-zQ-urP" firstAttribute="top" secondItem="PPR-Uw-JDk" secondAttribute="bottom" constant="8" symbolic="YES" id="4WS-Tg-UJs"/>
+                            <constraint firstItem="Zfi-zQ-urP" firstAttribute="centerX" secondItem="PPR-Uw-JDk" secondAttribute="centerX" id="7ty-L2-se6"/>
+                            <constraint firstItem="Zfi-zQ-urP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="171" id="GED-bM-eIJ"/>
+                            <constraint firstItem="u7c-tS-Wl6" firstAttribute="trailing" secondItem="UCt-lT-ca5" secondAttribute="trailing" id="IQ3-W1-xhi"/>
+                            <constraint firstItem="PPR-Uw-JDk" firstAttribute="centerX" secondItem="UCt-lT-ca5" secondAttribute="centerX" id="Lv4-bL-YAg"/>
+                            <constraint firstItem="UCt-lT-ca5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Mcp-XX-PRe"/>
+                            <constraint firstItem="PPR-Uw-JDk" firstAttribute="width" secondItem="UCt-lT-ca5" secondAttribute="height" multiplier="2:5" id="QjP-nF-Ms2"/>
+                            <constraint firstItem="Zfi-zQ-urP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XES-eI-gf2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kEE-fN-bbU" secondAttribute="bottom" constant="8" symbolic="YES" id="Y7W-si-fEV"/>
+                            <constraint firstItem="kEE-fN-bbU" firstAttribute="leading" secondItem="UCt-lT-ca5" secondAttribute="leading" id="Zno-Nq-sAd"/>
+                            <constraint firstItem="UCt-lT-ca5" firstAttribute="top" secondItem="PPR-Uw-JDk" secondAttribute="bottom" constant="-163" id="a4g-d9-6NG"/>
+                            <constraint firstItem="UCt-lT-ca5" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="foN-6H-NHf"/>
+                            <constraint firstItem="u7c-tS-Wl6" firstAttribute="baseline" secondItem="kEE-fN-bbU" secondAttribute="baseline" id="iMJ-4p-CDO"/>
+                            <constraint firstItem="Uvz-qF-OmH" firstAttribute="top" secondItem="Zfi-zQ-urP" secondAttribute="bottom" constant="8" symbolic="YES" id="mt5-cM-CIV"/>
+                            <constraint firstItem="Uvz-qF-OmH" firstAttribute="leading" secondItem="Zfi-zQ-urP" secondAttribute="leading" id="oOe-hV-GHp"/>
+                            <constraint firstItem="Uvz-qF-OmH" firstAttribute="centerX" secondItem="Ss2-vu-yXB" secondAttribute="centerX" id="um9-mg-Ehg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="UCt-lT-ca5" id="hNh-vL-1pS"/>
+                        <outlet property="LogInButton" destination="Ss2-vu-yXB" id="gg1-Vt-260"/>
+                        <outlet property="PasswordField" destination="Uvz-qF-OmH" id="hg0-PX-Hqm"/>
+                        <outlet property="UsernameField" destination="Zfi-zQ-urP" id="S4K-Mj-t10"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rtr-2R-n6N">
+                    <connections>
+                        <action selector="BackgroundTapped:" destination="BYZ-38-t0r" id="5Pi-44-Rrh"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="323" y="453"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Qbnb logo copy.png" width="900" height="600"/>
+        <image name="wall copy.png" width="640" height="960"/>
+    </resources>
+</document>

@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A212C9881C83F15B00D41956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A212C9871C83F15B00D41956 /* AppDelegate.swift */; };
+		A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A212C9891C83F15B00D41956 /* ViewController.swift */; };
+		A212C98D1C83F15B00D41956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A212C98B1C83F15B00D41956 /* Main.storyboard */; };
+		A212C98F1C83F15B00D41956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A212C98E1C83F15B00D41956 /* Assets.xcassets */; };
+		A212C9921C83F15B00D41956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A212C9901C83F15B00D41956 /* LaunchScreen.storyboard */; };
+		A21711AF1C9A500C00F28399 /* Qbnb logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = A21711AD1C9A500C00F28399 /* Qbnb logo copy.png */; };
+		A21711B01C9A500C00F28399 /* wall copy.png in Resources */ = {isa = PBXBuildFile; fileRef = A21711AE1C9A500C00F28399 /* wall copy.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A212C9841C83F15B00D41956 /* QBnB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QBnB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A212C9871C83F15B00D41956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A212C9891C83F15B00D41956 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A212C98C1C83F15B00D41956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A212C98E1C83F15B00D41956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A212C9911C83F15B00D41956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A212C9931C83F15B00D41956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21711AD1C9A500C00F28399 /* Qbnb logo copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Qbnb logo copy.png"; path = "Image Assets/Qbnb logo copy.png"; sourceTree = "<group>"; };
+		A21711AE1C9A500C00F28399 /* wall copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wall copy.png"; path = "Image Assets/wall copy.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A212C9811C83F15B00D41956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A212C97B1C83F15B00D41956 = {
+			isa = PBXGroup;
+			children = (
+				A212C9861C83F15B00D41956 /* QBnB */,
+				A212C9851C83F15B00D41956 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A212C9851C83F15B00D41956 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A212C9841C83F15B00D41956 /* QBnB.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A212C9861C83F15B00D41956 /* QBnB */ = {
+			isa = PBXGroup;
+			children = (
+				A21711AC1C9A4F5F00F28399 /* Image Assets */,
+				A212C9871C83F15B00D41956 /* AppDelegate.swift */,
+				A212C9891C83F15B00D41956 /* ViewController.swift */,
+				A212C98B1C83F15B00D41956 /* Main.storyboard */,
+				A212C98E1C83F15B00D41956 /* Assets.xcassets */,
+				A212C9901C83F15B00D41956 /* LaunchScreen.storyboard */,
+				A212C9931C83F15B00D41956 /* Info.plist */,
+			);
+			path = QBnB;
+			sourceTree = "<group>";
+		};
+		A21711AC1C9A4F5F00F28399 /* Image Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A21711AD1C9A500C00F28399 /* Qbnb logo copy.png */,
+				A21711AE1C9A500C00F28399 /* wall copy.png */,
+			);
+			name = "Image Assets";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A212C9831C83F15B00D41956 /* QBnB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A212C9961C83F15B00D41956 /* Build configuration list for PBXNativeTarget "QBnB" */;
+			buildPhases = (
+				A212C9801C83F15B00D41956 /* Sources */,
+				A212C9811C83F15B00D41956 /* Frameworks */,
+				A212C9821C83F15B00D41956 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QBnB;
+			productName = QBnB;
+			productReference = A212C9841C83F15B00D41956 /* QBnB.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A212C97C1C83F15B00D41956 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Mitchell Waite";
+				TargetAttributes = {
+					A212C9831C83F15B00D41956 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = SX6WYXD9SV;
+					};
+				};
+			};
+			buildConfigurationList = A212C97F1C83F15B00D41956 /* Build configuration list for PBXProject "QBnB" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A212C97B1C83F15B00D41956;
+			productRefGroup = A212C9851C83F15B00D41956 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A212C9831C83F15B00D41956 /* QBnB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A212C9821C83F15B00D41956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A21711AF1C9A500C00F28399 /* Qbnb logo copy.png in Resources */,
+				A212C9921C83F15B00D41956 /* LaunchScreen.storyboard in Resources */,
+				A21711B01C9A500C00F28399 /* wall copy.png in Resources */,
+				A212C98F1C83F15B00D41956 /* Assets.xcassets in Resources */,
+				A212C98D1C83F15B00D41956 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A212C9801C83F15B00D41956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */,
+				A212C9881C83F15B00D41956 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A212C98B1C83F15B00D41956 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A212C98C1C83F15B00D41956 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A212C9901C83F15B00D41956 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A212C9911C83F15B00D41956 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A212C9941C83F15B00D41956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A212C9951C83F15B00D41956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A212C9971C83F15B00D41956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = QBnB/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = m8tr1x.QBnB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		A212C9981C83F15B00D41956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = QBnB/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = m8tr1x.QBnB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A212C97F1C83F15B00D41956 /* Build configuration list for PBXProject "QBnB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A212C9941C83F15B00D41956 /* Debug */,
+				A212C9951C83F15B00D41956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A212C9961C83F15B00D41956 /* Build configuration list for PBXNativeTarget "QBnB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A212C9971C83F15B00D41956 /* Debug */,
+				A212C9981C83F15B00D41956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A212C97C1C83F15B00D41956 /* Project object */;
+}
