@@ -45,6 +45,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func ForgotPassword_TouchUpInside(sender: AnyObject)
+    {
+        let getEmailAlert = UIAlertView(title: "Forgot Password",message: "Please enter your account email address. Password reset details will be sent to you.",delegate:self,cancelButtonTitle: "Submit");
+        
+        getEmailAlert.alertViewStyle = UIAlertViewStyle.PlainTextInput;
+        
+        getEmailAlert.show();
+        
+        let uiav = UIAlertView.init(title: "Yoloswag", message: getEmailAlert.textFieldAtIndex(0)!.text, delegate: self, cancelButtonTitle: "fuk u");
+        
+        uiav.show();
+        
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         self.view.endEditing(true);
