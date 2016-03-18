@@ -15,6 +15,8 @@
 		A21711AF1C9A500C00F28399 /* Qbnb logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = A21711AD1C9A500C00F28399 /* Qbnb logo copy.png */; };
 		A21711B01C9A500C00F28399 /* wall copy.png in Resources */ = {isa = PBXBuildFile; fileRef = A21711AE1C9A500C00F28399 /* wall copy.png */; };
 		A220F92D1C9A8030000F8E50 /* QBnB.png in Resources */ = {isa = PBXBuildFile; fileRef = A220F92C1C9A8030000F8E50 /* QBnB.png */; };
+		A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */; };
+		A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A21711AD1C9A500C00F28399 /* Qbnb logo copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Qbnb logo copy.png"; path = "Image Assets/Qbnb logo copy.png"; sourceTree = "<group>"; };
 		A21711AE1C9A500C00F28399 /* wall copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wall copy.png"; path = "Image Assets/wall copy.png"; sourceTree = "<group>"; };
 		A220F92C1C9A8030000F8E50 /* QBnB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QBnB.png; path = "Image Assets/QBnB.png"; sourceTree = "<group>"; };
+		A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgLookupVC.swift; sourceTree = "<group>"; };
+		A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				A212C98E1C83F15B00D41956 /* Assets.xcassets */,
 				A212C9901C83F15B00D41956 /* LaunchScreen.storyboard */,
 				A212C9931C83F15B00D41956 /* Info.plist */,
+				A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */,
+				A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */,
 			);
 			path = QBnB;
 			sourceTree = "<group>";
@@ -156,6 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */,
+				A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */,
 				A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */,
 				A212C9881C83F15B00D41956 /* AppDelegate.swift in Sources */,
 			);

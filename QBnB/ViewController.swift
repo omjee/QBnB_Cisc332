@@ -39,23 +39,75 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func LoginButton_TouchUpInside(sender: AnyObject) {
-        let uiav = UIAlertView.init(title: "Bonjour!", message: "Hello world. I finally got this damn UI to work! 😂", delegate: self, cancelButtonTitle: "Yoloswag...");
-    
-        uiav.show();
+        //let uiav = UIAlertView.init(title: "Bonjour!", message: "Hello world. I finally got this damn UI to work! 😂", delegate: self, cancelButtonTitle: "Yoloswag...");
+        let uiav = UIAlertController(title:"Error",message: "Login Failed. Bad username/password combination.",preferredStyle: .Alert);
+       
+        let OKAction = UIAlertAction(title: "OK",style: .Cancel)
+            { (action) in
+                
+            }
         
+        uiav.addAction(OKAction);
+        
+        self.presentViewController(uiav, animated: true, completion: { () -> Void in
+            
+        });
     }
     
     @IBAction func ForgotPassword_TouchUpInside(sender: AnyObject)
     {
-        let getEmailAlert = UIAlertView(title: "Forgot Password",message: "Please enter your account email address. Password reset details will be sent to you.",delegate:self,cancelButtonTitle: "Submit");
+        let getEmailViewController = UIAlertController(title: "Forgot Password",message: "Enter your account's email address. Password reset instructions will be sent to your inbox.",preferredStyle: .Alert);
         
-        getEmailAlert.alertViewStyle = UIAlertViewStyle.PlainTextInput;
+        let submitAction = UIAlertAction(title: "Submit", style: .Default){ (action) in
+            let uiav = UIAlertView.init(title:"Swag",message: "",delegate:self,cancelButtonTitle:"Ok");
         
-        getEmailAlert.show();
+            
+            let postString = "email_field=" + getEmailViewController.textFields![0].text!
+            
+            let request = NSMutableURLRequest(URL: NSURL(string:"http://Mitchells-iMac.local/forgotpassword.php")!)
+            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+            request.HTTPMethod = "POST"
+            
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()){ (response, data, error) in
+                
+                if let HTTPResponse = response as? NSHTTPURLResponse{
+                    let statusCode = HTTPResponse.statusCode
+                    
+                    if statusCode != 200
+                    {
+                        uiav.title = "Error " + String(statusCode);
+                    }
+                    else
+                    {
+                        uiav.title = "Success";
+                    }
+                    
+                    uiav.message? += String(data: data!,encoding: NSUTF8StringEncoding)!
+                    
+                    uiav.show()
+                }
+                
+            }
+            
+            
+            
+            
+        }
         
-        let uiav = UIAlertView.init(title: "Yoloswag", message: getEmailAlert.textFieldAtIndex(0)!.text, delegate: self, cancelButtonTitle: "fuk u");
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel){ (action) in
+            
+        }
         
-        uiav.show();
+        getEmailViewController.addTextFieldWithConfigurationHandler {(textField) in
+            textField.placeholder = "email address"
+        }
+        
+        getEmailViewController.addAction(submitAction);
+        getEmailViewController.addAction(cancelAction);
+        
+        self.presentViewController(getEmailViewController, animated: true){(Void) in
+            //yolo
+        }
         
     }
     
