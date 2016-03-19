@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: UIViewController,UITextFieldDelegate {
 
-    
+    //spinners for degree types
     @IBOutlet var YearPicker: UIPickerView!
     @IBOutlet var DegreePicker: UIPickerView!
     
@@ -18,6 +18,21 @@ class CreateAccountViewController: UIViewController {
     var facultyTypes = ["Arts","Commerce","Computing","Education","Engineering","Health Sci","Science","Law"];
     var initialYear = 1901;
     var years = ["1900"];
+    
+    //outlets for text fields
+    
+    
+    @IBOutlet var EmailTextField: UITextField!
+    @IBOutlet var PasswordTextField: UITextField!
+    @IBOutlet var ConfirmPasswordTextField: UITextField!
+    @IBOutlet var FirstNameTextField: UITextField!
+    @IBOutlet var MiddleInitialTextField: UITextField!
+    @IBOutlet var LastNameTextField: UITextField!
+    @IBOutlet var PhoneNumberTextField: UITextField!
+    @IBOutlet var ProfilePictureURLTextField: UITextField!
+    
+    @IBOutlet var CreateAccScrollView: UIScrollView!
+    
     
     override func viewDidLoad() {
        
@@ -44,6 +59,28 @@ class CreateAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //delegate methods for text fields
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return true;
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) ->Bool
+    {
+        guard let text = textField.text else { return true }
+        
+        
+        if(textField == MiddleInitialTextField)
+        {
+            let newLength = text.characters.count + string.characters.count - range.length
+            return newLength <= 1
+        }
+        else
+        {
+            return true;
+        }
+    }
+    
+    //delegate methods for picker/spinners
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         if(pickerView == YearPicker)
         {
@@ -109,6 +146,119 @@ class CreateAccountViewController: UIViewController {
     @IBAction func TapRecognized(sender: AnyObject) {
         self.view.endEditing(true);
     }
+    
+    @IBAction func SubmitAccount_Click(sender: AnyObject) {
+        self.view.endEditing(true);
+        
+        var errorString = "";
+        var postString = "";
+        
+        if(FirstNameTextField.text! == "")
+        {
+            errorString += "First name is blank\n";
+        }
+        else
+        {
+            postString += "first_name_field=" + FirstNameTextField.text! + "&";
+        }
+        
+        if(MiddleInitialTextField.text! != "")
+        {
+            postString += "middle_initial_field=" + MiddleInitialTextField.text! + "&";
+        }
+        
+        if(LastNameTextField.text! == "")
+        {
+            errorString += "Last name is blank\n";
+        }
+        else
+        {
+            postString += "last_name_field=" + LastNameTextField.text! + "&";
+        }
+        
+        if(EmailTextField.text! == "")
+        {
+            errorString += "Email is blank\n"
+        }
+        else
+        {
+            postString += "email_field=" + EmailTextField.text! + "&"
+        }
+        
+        if(PasswordTextField.text! == "")
+        {
+            errorString += "Password is blank\n";
+        }
+        else if (PasswordTextField.text! != ConfirmPasswordTextField.text!)
+        {
+            errorString += "Password does not match confirmation";
+        }
+        else
+        {
+            postString += "password_field=" + PasswordTextField.text! + "&";
+        }
+        
+        if(PhoneNumberTextField.text! == "")
+        {
+            errorString +=  "Phone Number is blank\n";
+        }
+        else
+        {
+            postString += "primary_phone_field=" + PhoneNumberTextField.text! + "&"
+        }
+        
+        if(ProfilePictureURLTextField.text! == "")
+        {
+            errorString += "Must choose a profile picture";
+        }
+        else
+        {
+            postString += "ppURL_field=" + ProfilePictureURLTextField.text! + "&";
+        }
+        
+        postString += "year_field=" + years[YearPicker.selectedRowInComponent(0)] + "&";
+        postString += "faculty_field=" + facultyTypes[DegreePicker.selectedRowInComponent(1)] + "&";
+        postString += "type_field=" + degreeTypes[DegreePicker.selectedRowInComponent(0)];
+        
+        guard errorString == "" else
+        {
+            let uiav = UIAlertView.init(title: "Input Errors", message: "There are errors in your submission:\n\n" + errorString, delegate: self, cancelButtonTitle: "OK");
+            uiav.show();
+            return;
+        }
+        
+        let uiav = UIAlertView.init(title:"Swag",message: "",delegate:self,cancelButtonTitle:"OK");
+        
+        let request = NSMutableURLRequest(URL: NSURL(string:"http://Mitchells-iMac.local/newaccount.php")!)
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPMethod = "POST"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()){ (response, data, error) in
+            
+            if let HTTPResponse = response as? NSHTTPURLResponse{
+                let statusCode = HTTPResponse.statusCode
+                
+                if statusCode != 200
+                {
+                    uiav.title = "Error " + String(statusCode);
+                }
+                else
+                {
+                    uiav.title = "Success";
+                }
+                
+                uiav.message? += String(data: data!,encoding: NSUTF8StringEncoding)!
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                uiav.show()
+            }
+            
+        }
+        
+    }
+    
+    
     
     /*
     // MARK: - Navigation

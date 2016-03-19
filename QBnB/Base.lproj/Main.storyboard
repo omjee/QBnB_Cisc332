@@ -172,7 +172,7 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gk6-wQ-Y66">
                                         <rect key="frame" x="8" y="8" width="584" height="833"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okM-i8-oIT">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okM-i8-oIT" userLabel="EmailTextField">
                                                 <rect key="frame" x="8" y="37" width="568" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -408,12 +408,25 @@
                                 <action selector="BackButton_Click:" destination="lQ2-Vo-quy" id="jAr-Sd-dhP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="7oY-NK-KNV"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="7oY-NK-KNV">
+                            <connections>
+                                <action selector="SubmitAccount_Click:" destination="lQ2-Vo-quy" id="aoL-zB-AIl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
                     <connections>
+                        <outlet property="ConfirmPasswordTextField" destination="x2Q-Pb-1f5" id="p8t-vj-r2R"/>
+                        <outlet property="CreateAccScrollView" destination="vef-pE-gBd" id="Fyh-r8-RfL"/>
                         <outlet property="DegreePicker" destination="Eco-9t-BMy" id="t0b-xO-h1t"/>
+                        <outlet property="EmailTextField" destination="okM-i8-oIT" id="Cq4-Mc-CUx"/>
+                        <outlet property="FirstNameTextField" destination="4P5-DG-KSr" id="1bm-gV-tib"/>
+                        <outlet property="LastNameTextField" destination="dZ9-Zu-aY6" id="k14-ap-bbR"/>
+                        <outlet property="MiddleInitialTextField" destination="H0e-0U-SKY" id="WmX-q4-PFa"/>
+                        <outlet property="PasswordTextField" destination="HJo-cp-Pec" id="IOy-kW-81r"/>
+                        <outlet property="PhoneNumberTextField" destination="R6l-4p-pGB" id="5sk-UC-Gjz"/>
+                        <outlet property="ProfilePictureURLTextField" destination="Ucw-0M-m4g" id="j4s-jn-NDM"/>
                         <outlet property="YearPicker" destination="oJl-tv-AXP" id="ljj-Th-ifT"/>
                     </connections>
                 </viewController>
