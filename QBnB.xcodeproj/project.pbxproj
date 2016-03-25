@@ -17,6 +17,7 @@
 		A220F92D1C9A8030000F8E50 /* QBnB.png in Resources */ = {isa = PBXBuildFile; fileRef = A220F92C1C9A8030000F8E50 /* QBnB.png */; };
 		A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */; };
 		A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */; };
+		A2D156031C9E1E85005CF73C /* TempLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D156021C9E1E85005CF73C /* TempLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A220F92C1C9A8030000F8E50 /* QBnB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QBnB.png; path = "Image Assets/QBnB.png"; sourceTree = "<group>"; };
 		A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgLookupVC.swift; sourceTree = "<group>"; };
 		A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		A2D156021C9E1E85005CF73C /* TempLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				A212C9871C83F15B00D41956 /* AppDelegate.swift */,
 				A212C9891C83F15B00D41956 /* ViewController.swift */,
 				A212C98B1C83F15B00D41956 /* Main.storyboard */,
+				A2D156021C9E1E85005CF73C /* TempLoginViewController.swift */,
 				A212C98E1C83F15B00D41956 /* Assets.xcassets */,
 				A212C9901C83F15B00D41956 /* LaunchScreen.storyboard */,
 				A212C9931C83F15B00D41956 /* Info.plist */,
@@ -164,6 +167,7 @@
 			files = (
 				A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */,
 				A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */,
+				A2D156031C9E1E85005CF73C /* TempLoginViewController.swift in Sources */,
 				A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */,
 				A212C9881C83F15B00D41956 /* AppDelegate.swift in Sources */,
 			);

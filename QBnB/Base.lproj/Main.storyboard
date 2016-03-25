@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -49,12 +50,12 @@
                                     <constraint firstAttribute="width" constant="289" id="tEg-9I-RAK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uvz-qF-OmH">
                                 <rect key="frame" x="156" y="209" width="289" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Sif-Vu-z9C"/>
                                 </connections>
@@ -135,6 +136,50 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="168" y="447"/>
+        </scene>
+        <!--Temp Login View Controller-->
+        <scene sceneID="JTm-4g-AVP">
+            <objects>
+                <viewController storyboardIdentifier="TempLoginVC" id="IBk-1W-oQg" customClass="TempLoginViewController" customModule="QBnB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WeC-tE-glK"/>
+                        <viewControllerLayoutGuide type="bottom" id="PEh-aV-jQN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q15-yL-pZj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqh-rg-0I0">
+                                <rect key="frame" x="243" y="562" width="115" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="LogoutButton_Click:" destination="IBk-1W-oQg" eventType="touchUpInside" id="4iG-hX-3Is"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dvP-k3-4iX">
+                                <rect key="frame" x="20" y="20" width="560" height="539"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PEh-aV-jQN" firstAttribute="top" secondItem="Qqh-rg-0I0" secondAttribute="bottom" constant="8" id="MMM-Cj-Qt5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dvP-k3-4iX" secondAttribute="trailing" id="OLN-2C-IbT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dvP-k3-4iX" secondAttribute="leading" id="cVb-HU-jhb"/>
+                            <constraint firstItem="Qqh-rg-0I0" firstAttribute="centerX" secondItem="Q15-yL-pZj" secondAttribute="centerX" id="t74-aG-Z1Y"/>
+                            <constraint firstItem="dvP-k3-4iX" firstAttribute="top" secondItem="WeC-tE-glK" secondAttribute="bottom" id="xcC-MP-Fpu"/>
+                            <constraint firstItem="Qqh-rg-0I0" firstAttribute="top" secondItem="dvP-k3-4iX" secondAttribute="bottom" constant="3" id="ziM-dr-iTt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="LoginBanner" destination="dvP-k3-4iX" id="7lZ-Rc-X2Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zxC-AB-8lL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="1214"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="60y-n6-9lJ">

@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let cookiesStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if let cookieDictionary = userDefaults.dictionaryForKey("qbnb") {
+            
+            for (_, cookieProperties) in cookieDictionary {
+                if let cookie = NSHTTPCookie(properties: cookieProperties as! [String : AnyObject] ) {
+                    cookiesStorage.setCookie(cookie)
+                }
+            }
+        }
+
+        
         return true
     }
 
@@ -27,10 +40,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+       
+        
+        let cookiesStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let serverBaseUrl = "http://Mitchells-iMac.local"
+        var cookieDict = [String : AnyObject]()
+        
+        for cookie in cookiesStorage.cookiesForURL(NSURL(string: serverBaseUrl)!)! {
+            cookieDict[cookie.name] = cookie.properties
+        }
+        
+        userDefaults.setObject(cookieDict, forKey: "qbnb")
+    
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
+        
     }
 
     func applicationDidBecomeActive(application: UIApplication) {

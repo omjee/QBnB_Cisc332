@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var UsernameField: UITextField!
     @IBOutlet var PasswordField: UITextField!
     
+    var loginSession : NSURLSession!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         LogInButton.backgroundColor = UIColor.whiteColor();
@@ -26,7 +28,45 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.PasswordField.delegate = self;
         
         
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration();
+        sessionConfig.HTTPCookieAcceptPolicy = NSHTTPCookieAcceptPolicy.Always;
+        sessionConfig.HTTPShouldSetCookies = true;
+        loginSession = NSURLSession(configuration: sessionConfig);
     
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        
+        let postString = "email=&password=";
+        let loginURLRequest = NSMutableURLRequest(URL: NSURL(string: "http://Mitchells-iMac.local/login.php")!);
+        loginURLRequest.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
+        loginURLRequest.HTTPMethod = "POST";
+        loginURLRequest.HTTPShouldHandleCookies = true;
+        
+        
+        let loginTask = loginSession.dataTaskWithRequest(loginURLRequest){(data,response,error) in
+            
+            if let HTTPResponse = response as? NSHTTPURLResponse{
+                
+                if(HTTPResponse.statusCode == 200)
+                {
+                    dispatch_async(dispatch_get_main_queue()){
+                        
+                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TempLoginVC") as! TempLoginViewController;
+                            vc.loginSession = self.loginSession;
+                            self.presentViewController(vc, animated: true, completion: nil)
+                    
+                    }
+                }
+            }
+            
+        }
+        
+        
+        loginTask.resume();
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,27 +79,99 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func LoginButton_TouchUpInside(sender: AnyObject) {
-        //let uiav = UIAlertView.init(title: "Bonjour!", message: "Hello world. I finally got this damn UI to work! 😂", delegate: self, cancelButtonTitle: "Yoloswag...");
-        let uiav = UIAlertController(title:"Error",message: "Login Failed. Bad username/password combination.",preferredStyle: .Alert);
+        let uiav = UIAlertController(title:"Please Wait",message: "Logging you in to QBnB...",preferredStyle: .Alert);
        
-        let OKAction = UIAlertAction(title: "OK",style: .Cancel)
-            { (action) in
-                
-            }
         
-        uiav.addAction(OKAction);
         
         self.presentViewController(uiav, animated: true, completion: { () -> Void in
-            
+          
         });
+        
+        
+        let postString = "email=" + self.UsernameField.text! + "&password=" + self.PasswordField.text!
+        
+        
+        
+        let loginURLRequest = NSMutableURLRequest(URL: NSURL(string: "http://Mitchells-iMac.local/login.php")!);
+        
+        loginURLRequest.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
+        loginURLRequest.HTTPMethod = "POST";
+        loginURLRequest.HTTPShouldHandleCookies = true;
+        
+        
+        
+        let loginTask = loginSession.dataTaskWithRequest(loginURLRequest){(data,response,error) in
+            if let HTTPResponse = response as? NSHTTPURLResponse, let fields = HTTPResponse.allHeaderFields as? [String : String]{
+                
+                let cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(fields, forURL: response!.URL!)
+                NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(cookies, forURL: response!.URL!, mainDocumentURL: nil)
+                for cookie in cookies {
+                    var cookieProperties = [String: AnyObject]()
+                    cookieProperties[NSHTTPCookieName] = cookie.name
+                    cookieProperties[NSHTTPCookieValue] = cookie.value
+                    cookieProperties[NSHTTPCookieDomain] = cookie.domain
+                    cookieProperties[NSHTTPCookiePath] = cookie.path
+                    cookieProperties[NSHTTPCookieVersion] = NSNumber(integer: cookie.version)
+                    cookieProperties[NSHTTPCookieExpires] = NSDate().dateByAddingTimeInterval(31536000)
+                    
+                    let newCookie = NSHTTPCookie(properties: cookieProperties)
+                    NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(newCookie!)
+                    
+                    print("name: \(cookie.name) value: \(cookie.value)")
+                }
+                
+                
+                
+                
+                
+                
+                if(HTTPResponse.statusCode != 200)
+                {
+                    dispatch_async(dispatch_get_main_queue()){
+                    
+                        uiav.title! = "Error " + String(HTTPResponse.statusCode);
+                        uiav.message! = "There was an error logging you in. It's likely a bad username or password";
+                    
+                        let OKAction = UIAlertAction(title: "OK",style: .Cancel)
+                        { (action) in
+                        }
+                    
+                        uiav.addAction(OKAction);
+                    }
+                }
+                else
+                {
+                    dispatch_async(dispatch_get_main_queue()){
+                        
+                        uiav.dismissViewControllerAnimated(true, completion: { () -> Void in
+                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TempLoginVC") as! TempLoginViewController;
+                            vc.loginSession = self.loginSession;
+                            self.presentViewController(vc, animated: true, completion: nil)
+                        })
+                    }
+                    
+                    
+                }
+                
+
+                
+                //let uiav = UIAlertView(title: "Server Response: " + String(HTTPResponse.statusCode),message: cookies.description,delegate:self,cancelButtonTitle:"OK");
+                //uiav.show();
+            }
+        }
+        
+        loginTask.resume();
+
+        
     }
     
     @IBAction func ForgotPassword_TouchUpInside(sender: AnyObject)
     {
+        
         let getEmailViewController = UIAlertController(title: "Forgot Password",message: "Enter your account's email address. Password reset instructions will be sent to your inbox.",preferredStyle: .Alert);
         
         let submitAction = UIAlertAction(title: "Submit", style: .Default){ (action) in
-            let uiav = UIAlertView.init(title:"Swag",message: "",delegate:self,cancelButtonTitle:"Ok");
+           
         
             
             let postString = "email_field=" + getEmailViewController.textFields![0].text!
@@ -68,27 +180,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
             request.HTTPMethod = "POST"
             
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()){ (response, data, error) in
-                
+            let task = self.loginSession.dataTaskWithRequest(request){ (data,response, error) in
                 if let HTTPResponse = response as? NSHTTPURLResponse{
                     let statusCode = HTTPResponse.statusCode
                     
-                    if statusCode != 200
-                    {
-                        uiav.title = "Error " + String(statusCode);
-                    }
-                    else
-                    {
-                        uiav.title = "Success";
-                    }
                     
-                    uiav.message? += String(data: data!,encoding: NSUTF8StringEncoding)!
+                    dispatch_async(dispatch_get_main_queue())
+                        {
+                            let uiav = UIAlertController(title: "", message: "", preferredStyle: .Alert);
+                            
+                            if statusCode != 200
+                            {
+                                uiav.title = "Error " + String(statusCode);
+                            }
+                            else
+                            {
+                                uiav.title = "Success";
+                            }
                     
-                    uiav.show()
+                            uiav.message? = String(data: data!,encoding: NSUTF8StringEncoding)!
+                    
+                
+                            
+                            uiav.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil));
+                            
+                            self.presentViewController(uiav, animated: true, completion: nil);
+                    }
                 }
+
                 
             }
             
+            task.resume();
             
             
             
@@ -100,6 +223,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         getEmailViewController.addTextFieldWithConfigurationHandler {(textField) in
             textField.placeholder = "email address"
+            textField.keyboardType = UIKeyboardType.EmailAddress;
         }
         
         getEmailViewController.addAction(submitAction);
