@@ -12,8 +12,14 @@ class HomeTabViewController: UIViewController {
 
     @IBOutlet var AccountImageView: UIImageView!
     @IBOutlet var NameLabel: UILabel!
+    
+    @IBOutlet var MyAccountButton: UIButton!
+    @IBOutlet var SearchButton: UIButton!
+    @IBOutlet var MyBookingsButton: UIButton!
     @IBOutlet var MyPropertiesButton: UIButton!
     @IBOutlet var AdministrationButton: UIButton!
+    
+    @IBOutlet var ButtonStack: UIStackView!
     @IBOutlet var IDLabel: UILabel!
     
     override func viewDidLoad() {
@@ -29,18 +35,37 @@ class HomeTabViewController: UIViewController {
             self.IDLabel.text = "ID No: " + AccountProperties.acc_id;
             
             
-            if AccountProperties.IsAdmin == true
+            if AccountProperties.IsAdmin == false
             {
-                self.AdministrationButton.userInteractionEnabled = true;
-                self.AdministrationButton.tintColor = UIColor.whiteColor();
+                self.ButtonStack.removeArrangedSubview(self.AdministrationButton);
             }
             
-            if AccountProperties.IsSupplier == true
+            if AccountProperties.IsSupplier == false
             {
-                self.MyPropertiesButton.userInteractionEnabled = true;
-                self.MyPropertiesButton.tintColor = UIColor.whiteColor();
+                self.ButtonStack.removeArrangedSubview(self.MyPropertiesButton);
             }
             
+            
+            self.MyAccountButton.backgroundColor = UIColor.whiteColor();
+            self.MyAccountButton.layer.cornerRadius = 6.0;
+            self.MyAccountButton.alpha = 0.8;
+            
+            self.SearchButton.backgroundColor = UIColor.whiteColor();
+            self.SearchButton.layer.cornerRadius = 6.0;
+            self.SearchButton.alpha = 0.8;
+
+            self.MyBookingsButton.backgroundColor = UIColor.whiteColor();
+            self.MyBookingsButton.layer.cornerRadius = 6.0;
+            self.MyBookingsButton.alpha = 0.8;
+
+            self.MyPropertiesButton.backgroundColor = UIColor.whiteColor();
+            self.MyPropertiesButton.layer.cornerRadius = 6.0;
+            self.MyPropertiesButton.alpha = 0.8;
+
+            self.AdministrationButton.backgroundColor = UIColor.whiteColor();
+            self.AdministrationButton.layer.cornerRadius = 6.0;
+            self.AdministrationButton.alpha = 0.8;
+
         }
         
         
@@ -53,21 +78,6 @@ class HomeTabViewController: UIViewController {
     }
     
 
-    @IBAction func LogOutButton_Click(sender: AnyObject) {
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://Mitchells-iMac.local/logout.php")!);
-        
-        let logoutReq = URLSesh.loginSession.dataTaskWithRequest(request){(data,response,error) in
-            dispatch_async(dispatch_get_main_queue()){
-                self.dismissViewControllerAnimated(true, completion: nil);
-                let uiav = UIAlertController(title: "Logout", message: String(data: data!, encoding: NSUTF8StringEncoding),preferredStyle: .Alert);
-                uiav.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil));
-                self.presentViewController(uiav,animated: true,completion: nil);
-            }
-        };
-        
-        logoutReq.resume();
-    }
     
     @IBAction func MyAccount_Click(sender: AnyObject) {
         

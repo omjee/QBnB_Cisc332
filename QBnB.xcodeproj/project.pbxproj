@@ -27,6 +27,9 @@
 		A25F895E1CAB46B2005CC592 /* TabImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25F895D1CAB46B2005CC592 /* TabImages.xcassets */; };
 		A25F89631CAB780D005CC592 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F89621CAB780D005CC592 /* HomeTabViewController.swift */; };
 		A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */; };
+		A2DB31201CAC24BF000065A9 /* queensufly.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A2DB311F1CAC24BF000065A9 /* queensufly.jpg */; };
+		A2DB31231CAC41BD000065A9 /* MyReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB31221CAC41BD000065A9 /* MyReviewsTableViewController.swift */; };
+		A2DB31251CAC4224000065A9 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB31241CAC4224000065A9 /* ReviewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		A25F895D1CAB46B2005CC592 /* TabImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabImages.xcassets; sourceTree = "<group>"; };
 		A25F89621CAB780D005CC592 /* HomeTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
 		A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		A2DB311F1CAC24BF000065A9 /* queensufly.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = queensufly.jpg; sourceTree = "<group>"; };
+		A2DB31221CAC41BD000065A9 /* MyReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReviewsTableViewController.swift; sourceTree = "<group>"; };
+		A2DB31241CAC4224000065A9 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		A21711AC1C9A4F5F00F28399 /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A2DB311F1CAC24BF000065A9 /* queensufly.jpg */,
 				A208CF701CAB9D3C005872C2 /* GrantHallIphone.jpg */,
 				A208CF6D1CAB9831005872C2 /* Granthall.JPG */,
 				A25F89531CAB455B005CC592 /* Tab Images */,
@@ -139,14 +146,24 @@
 			isa = PBXGroup;
 			children = (
 				A25F89511CAB4382005CC592 /* TabsStoryboard.storyboard */,
+				A2DB31211CAC41A4000065A9 /* My Account */,
 				A25F89621CAB780D005CC592 /* HomeTabViewController.swift */,
-				A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */,
 				A2434FB01CABA3F10082FAEC /* SearchViewController.swift */,
 				A2434FB21CABA4100082FAEC /* MyPropertiesViewController.swift */,
 				A2434FB41CABA4460082FAEC /* MyBookingViewController.swift */,
 				A2434FB61CABAE350082FAEC /* TabController.swift */,
 			);
 			name = "Tab Screens";
+			sourceTree = "<group>";
+		};
+		A2DB31211CAC41A4000065A9 /* My Account */ = {
+			isa = PBXGroup;
+			children = (
+				A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */,
+				A2DB31221CAC41BD000065A9 /* MyReviewsTableViewController.swift */,
+				A2DB31241CAC4224000065A9 /* ReviewTableViewCell.swift */,
+			);
+			name = "My Account";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +228,7 @@
 				A220F92D1C9A8030000F8E50 /* QBnB.png in Resources */,
 				A21711AF1C9A500C00F28399 /* Qbnb logo copy.png in Resources */,
 				A208CF711CAB9D3C005872C2 /* GrantHallIphone.jpg in Resources */,
+				A2DB31201CAC24BF000065A9 /* queensufly.jpg in Resources */,
 				A25F89521CAB4382005CC592 /* TabsStoryboard.storyboard in Resources */,
 				A208CF6E1CAB9831005872C2 /* Granthall.JPG in Resources */,
 				A25F895E1CAB46B2005CC592 /* TabImages.xcassets in Resources */,
@@ -229,8 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */,
+				A2DB31251CAC4224000065A9 /* ReviewTableViewCell.swift in Sources */,
 				A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */,
 				A2434FB11CABA3F10082FAEC /* SearchViewController.swift in Sources */,
+				A2DB31231CAC41BD000065A9 /* MyReviewsTableViewController.swift in Sources */,
 				A2434FAF1CABA3BE0082FAEC /* MyAccountViewController.swift in Sources */,
 				A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */,
 				A2434FB71CABAE350082FAEC /* TabController.swift in Sources */,
