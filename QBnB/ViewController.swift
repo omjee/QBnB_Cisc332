@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var UsernameField: UITextField!
     @IBOutlet var PasswordField: UITextField!
     
-    var loginSession : NSURLSession!;
+    //var loginSession : NSURLSession!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +27,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.UsernameField.delegate = self;
         self.PasswordField.delegate = self;
         
-        
-        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration();
-        sessionConfig.HTTPCookieAcceptPolicy = NSHTTPCookieAcceptPolicy.Always;
-        sessionConfig.HTTPShouldSetCookies = true;
-        loginSession = NSURLSession(configuration: sessionConfig);
-    
     }
     
     
@@ -46,17 +40,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         loginURLRequest.HTTPShouldHandleCookies = true;
         
         
-        let loginTask = loginSession.dataTaskWithRequest(loginURLRequest){(data,response,error) in
+        let loginTask = URLSesh.loginSession.dataTaskWithRequest(loginURLRequest){(data,response,error) in
             
             if let HTTPResponse = response as? NSHTTPURLResponse{
                 
                 if(HTTPResponse.statusCode == 200)
                 {
+                
+                    
                     dispatch_async(dispatch_get_main_queue()){
                         
-                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TempLoginVC") as! TempLoginViewController;
-                            vc.loginSession = self.loginSession;
-                            self.presentViewController(vc, animated: true, completion: nil)
+                         self.doLogin();
                     
                     }
                 }
@@ -100,7 +94,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         
-        let loginTask = loginSession.dataTaskWithRequest(loginURLRequest){(data,response,error) in
+        let loginTask = URLSesh.loginSession.dataTaskWithRequest(loginURLRequest){(data,response,error) in
             if let HTTPResponse = response as? NSHTTPURLResponse, let fields = HTTPResponse.allHeaderFields as? [String : String]{
                 
                 let cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(fields, forURL: response!.URL!)
@@ -141,12 +135,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
                 else
                 {
+                    
+                    
                     dispatch_async(dispatch_get_main_queue()){
                         
                         uiav.dismissViewControllerAnimated(true, completion: { () -> Void in
-                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TempLoginVC") as! TempLoginViewController;
-                            vc.loginSession = self.loginSession;
-                            self.presentViewController(vc, animated: true, completion: nil)
+                            self.doLogin();
                         })
                     }
                     
@@ -165,6 +159,123 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+ 
+    
+    func doLogin()
+    {
+        
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://Mitchells-iMac.local/accountload.php")!);
+        
+       
+        
+        let accDataReq = URLSesh.loginSession.dataTaskWithRequest(request){(data,response,error) in
+            
+            do
+            {
+                let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments);
+                
+                print(jsonData.description);
+                
+                if let item = jsonData.objectAtIndex(0) as? [String:AnyObject]
+                {
+                    if let url = item["profile_pic_URL"] as? String
+                    {
+                        do
+                        {
+                            let imgData = try NSData(contentsOfURL: NSURL(string: url)!, options: NSDataReadingOptions());
+                            let image = UIImage(data: imgData);
+                            
+                            AccountProperties.profilePic = image;
+                            
+                            
+                        }
+                        catch
+                        {
+                            print("couldnt get image data");
+                        }
+                    }
+                    
+                    if let fname = item["first_name"] as? String
+                    {
+                        AccountProperties.fname = fname;
+                    }
+                    
+                    if let lname = item["last_name"] as? String
+                    {
+                        AccountProperties.lname = lname;
+                    }
+                    
+                    if let mi = item["middle_initial"] as? String
+                    {
+                        AccountProperties.mi = mi;
+                    }
+
+                    
+                }
+                
+                let request2 = NSMutableURLRequest(URL: NSURL(string: "http://Mitchells-iMac.local/homeload.php")!);
+                
+                let accDataReq2 = URLSesh.loginSession.dataTaskWithRequest(request2){(data,response,error) in
+                    
+                    do
+                    {
+                        let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments);
+                        
+                        print(jsonData.description);
+                        
+                        if let ad = jsonData["admin"] as? Bool!
+                        {
+                            AccountProperties.IsAdmin = ad;
+                        }
+                        
+                        if let su = jsonData["supplier"] as? Bool!
+                        {
+                            AccountProperties.IsSupplier = su;
+                        }
+                        
+                        if let id = jsonData["id"] as? Int!
+                        {
+                            AccountProperties.acc_id = String(id);
+                        }
+                      
+                        
+                    }
+                    catch
+                    {
+                        print("error serializing JSON: \(error)")
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue()){
+                    let storyboard = UIStoryboard(name: "TabsStoryboard", bundle: nil);
+                    let vc = storyboard.instantiateViewControllerWithIdentifier("TabController");
+                    self.presentViewController(vc, animated: true, completion: nil)
+                    }
+
+                    
+                    
+                }
+                
+                accDataReq2.resume();
+
+                
+                
+                
+            }
+            catch
+            {
+                print("error serializing JSON: \(error)")
+            }
+            
+        }
+        
+        accDataReq.resume();
+        
+        
+        
+    }
+    
+    
     @IBAction func ForgotPassword_TouchUpInside(sender: AnyObject)
     {
         
@@ -180,7 +291,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
             request.HTTPMethod = "POST"
             
-            let task = self.loginSession.dataTaskWithRequest(request){ (data,response, error) in
+            let task = URLSesh.loginSession.dataTaskWithRequest(request){ (data,response, error) in
                 if let HTTPResponse = response as? NSHTTPURLResponse{
                     let statusCode = HTTPResponse.statusCode
                     

@@ -8,11 +8,24 @@
 
 import UIKit
 
+
+struct URLSesh {
+     static var loginSession : NSURLSession!;
+}
+
+struct AccountProperties {
+    static var fname,lname,mi,acc_id : String!;
+    static var profilePic : UIImage!;
+    static var IsSupplier, IsAdmin : Bool!;
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+   
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,6 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
+        
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration();
+        sessionConfig.HTTPCookieAcceptPolicy = NSHTTPCookieAcceptPolicy.Always;
+        sessionConfig.HTTPShouldSetCookies = true;
+        URLSesh.loginSession = NSURLSession(configuration: sessionConfig);
+
+        
+        
         
         return true
     }

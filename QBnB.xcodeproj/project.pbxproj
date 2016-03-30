@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A208CF6E1CAB9831005872C2 /* Granthall.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A208CF6D1CAB9831005872C2 /* Granthall.JPG */; };
+		A208CF711CAB9D3C005872C2 /* GrantHallIphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A208CF701CAB9D3C005872C2 /* GrantHallIphone.jpg */; };
 		A212C9881C83F15B00D41956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A212C9871C83F15B00D41956 /* AppDelegate.swift */; };
 		A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A212C9891C83F15B00D41956 /* ViewController.swift */; };
 		A212C98D1C83F15B00D41956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A212C98B1C83F15B00D41956 /* Main.storyboard */; };
@@ -15,12 +17,21 @@
 		A21711AF1C9A500C00F28399 /* Qbnb logo copy.png in Resources */ = {isa = PBXBuildFile; fileRef = A21711AD1C9A500C00F28399 /* Qbnb logo copy.png */; };
 		A21711B01C9A500C00F28399 /* wall copy.png in Resources */ = {isa = PBXBuildFile; fileRef = A21711AE1C9A500C00F28399 /* wall copy.png */; };
 		A220F92D1C9A8030000F8E50 /* QBnB.png in Resources */ = {isa = PBXBuildFile; fileRef = A220F92C1C9A8030000F8E50 /* QBnB.png */; };
+		A2434FAF1CABA3BE0082FAEC /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */; };
+		A2434FB11CABA3F10082FAEC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB01CABA3F10082FAEC /* SearchViewController.swift */; };
+		A2434FB31CABA4100082FAEC /* MyPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB21CABA4100082FAEC /* MyPropertiesViewController.swift */; };
+		A2434FB51CABA4460082FAEC /* MyBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB41CABA4460082FAEC /* MyBookingViewController.swift */; };
+		A2434FB71CABAE350082FAEC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB61CABAE350082FAEC /* TabController.swift */; };
 		A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */; };
+		A25F89521CAB4382005CC592 /* TabsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A25F89511CAB4382005CC592 /* TabsStoryboard.storyboard */; };
+		A25F895E1CAB46B2005CC592 /* TabImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25F895D1CAB46B2005CC592 /* TabImages.xcassets */; };
+		A25F89631CAB780D005CC592 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F89621CAB780D005CC592 /* HomeTabViewController.swift */; };
 		A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */; };
-		A2D156031C9E1E85005CF73C /* TempLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D156021C9E1E85005CF73C /* TempLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A208CF6D1CAB9831005872C2 /* Granthall.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Granthall.JPG; sourceTree = "<group>"; };
+		A208CF701CAB9D3C005872C2 /* GrantHallIphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrantHallIphone.jpg; sourceTree = "<group>"; };
 		A212C9841C83F15B00D41956 /* QBnB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QBnB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A212C9871C83F15B00D41956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A212C9891C83F15B00D41956 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,9 +42,16 @@
 		A21711AD1C9A500C00F28399 /* Qbnb logo copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Qbnb logo copy.png"; path = "Image Assets/Qbnb logo copy.png"; sourceTree = "<group>"; };
 		A21711AE1C9A500C00F28399 /* wall copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wall copy.png"; path = "Image Assets/wall copy.png"; sourceTree = "<group>"; };
 		A220F92C1C9A8030000F8E50 /* QBnB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QBnB.png; path = "Image Assets/QBnB.png"; sourceTree = "<group>"; };
+		A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		A2434FB01CABA3F10082FAEC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A2434FB21CABA4100082FAEC /* MyPropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPropertiesViewController.swift; sourceTree = "<group>"; };
+		A2434FB41CABA4460082FAEC /* MyBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingViewController.swift; sourceTree = "<group>"; };
+		A2434FB61CABAE350082FAEC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgLookupVC.swift; sourceTree = "<group>"; };
+		A25F89511CAB4382005CC592 /* TabsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabsStoryboard.storyboard; sourceTree = "<group>"; };
+		A25F895D1CAB46B2005CC592 /* TabImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabImages.xcassets; sourceTree = "<group>"; };
+		A25F89621CAB780D005CC592 /* HomeTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
 		A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		A2D156021C9E1E85005CF73C /* TempLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,16 +84,12 @@
 		A212C9861C83F15B00D41956 /* QBnB */ = {
 			isa = PBXGroup;
 			children = (
+				A25F89601CAB764E005CC592 /* Base App */,
+				A25F895F1CAB7619005CC592 /* Login Screen */,
 				A21711AC1C9A4F5F00F28399 /* Image Assets */,
-				A212C9871C83F15B00D41956 /* AppDelegate.swift */,
-				A212C9891C83F15B00D41956 /* ViewController.swift */,
-				A212C98B1C83F15B00D41956 /* Main.storyboard */,
-				A2D156021C9E1E85005CF73C /* TempLoginViewController.swift */,
+				A25F89611CAB7662005CC592 /* Tab Screens */,
 				A212C98E1C83F15B00D41956 /* Assets.xcassets */,
-				A212C9901C83F15B00D41956 /* LaunchScreen.storyboard */,
 				A212C9931C83F15B00D41956 /* Info.plist */,
-				A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */,
-				A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */,
 			);
 			path = QBnB;
 			sourceTree = "<group>";
@@ -83,11 +97,56 @@
 		A21711AC1C9A4F5F00F28399 /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A208CF701CAB9D3C005872C2 /* GrantHallIphone.jpg */,
+				A208CF6D1CAB9831005872C2 /* Granthall.JPG */,
+				A25F89531CAB455B005CC592 /* Tab Images */,
 				A21711AD1C9A500C00F28399 /* Qbnb logo copy.png */,
 				A21711AE1C9A500C00F28399 /* wall copy.png */,
 				A220F92C1C9A8030000F8E50 /* QBnB.png */,
 			);
 			name = "Image Assets";
+			sourceTree = "<group>";
+		};
+		A25F89531CAB455B005CC592 /* Tab Images */ = {
+			isa = PBXGroup;
+			children = (
+				A25F895D1CAB46B2005CC592 /* TabImages.xcassets */,
+			);
+			name = "Tab Images";
+			sourceTree = "<group>";
+		};
+		A25F895F1CAB7619005CC592 /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A212C9891C83F15B00D41956 /* ViewController.swift */,
+				A212C98B1C83F15B00D41956 /* Main.storyboard */,
+				A29826701C9BAAA500B16098 /* CreateAccountViewController.swift */,
+				A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */,
+			);
+			name = "Login Screen";
+			sourceTree = "<group>";
+		};
+		A25F89601CAB764E005CC592 /* Base App */ = {
+			isa = PBXGroup;
+			children = (
+				A212C9871C83F15B00D41956 /* AppDelegate.swift */,
+				A212C9901C83F15B00D41956 /* LaunchScreen.storyboard */,
+			);
+			name = "Base App";
+			sourceTree = "<group>";
+		};
+		A25F89611CAB7662005CC592 /* Tab Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A25F89511CAB4382005CC592 /* TabsStoryboard.storyboard */,
+				A25F89621CAB780D005CC592 /* HomeTabViewController.swift */,
+				A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */,
+				A2434FB01CABA3F10082FAEC /* SearchViewController.swift */,
+				A2434FB21CABA4100082FAEC /* MyPropertiesViewController.swift */,
+				A2434FB41CABA4460082FAEC /* MyBookingViewController.swift */,
+				A2434FB61CABAE350082FAEC /* TabController.swift */,
+			);
+			name = "Tab Screens";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +210,10 @@
 			files = (
 				A220F92D1C9A8030000F8E50 /* QBnB.png in Resources */,
 				A21711AF1C9A500C00F28399 /* Qbnb logo copy.png in Resources */,
+				A208CF711CAB9D3C005872C2 /* GrantHallIphone.jpg in Resources */,
+				A25F89521CAB4382005CC592 /* TabsStoryboard.storyboard in Resources */,
+				A208CF6E1CAB9831005872C2 /* Granthall.JPG in Resources */,
+				A25F895E1CAB46B2005CC592 /* TabImages.xcassets in Resources */,
 				A212C9921C83F15B00D41956 /* LaunchScreen.storyboard in Resources */,
 				A21711B01C9A500C00F28399 /* wall copy.png in Resources */,
 				A212C98F1C83F15B00D41956 /* Assets.xcassets in Resources */,
@@ -167,9 +230,14 @@
 			files = (
 				A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */,
 				A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */,
-				A2D156031C9E1E85005CF73C /* TempLoginViewController.swift in Sources */,
+				A2434FB11CABA3F10082FAEC /* SearchViewController.swift in Sources */,
+				A2434FAF1CABA3BE0082FAEC /* MyAccountViewController.swift in Sources */,
 				A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */,
+				A2434FB71CABAE350082FAEC /* TabController.swift in Sources */,
+				A2434FB51CABA4460082FAEC /* MyBookingViewController.swift in Sources */,
+				A2434FB31CABA4100082FAEC /* MyPropertiesViewController.swift in Sources */,
 				A212C9881C83F15B00D41956 /* AppDelegate.swift in Sources */,
+				A25F89631CAB780D005CC592 /* HomeTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
