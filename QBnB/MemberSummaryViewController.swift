@@ -24,7 +24,7 @@ class MemberSummaryViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.WebView.loadRequest(NSURLRequest(URL: NSURL(string:"http://Mitchells-iMac.local/adminsummarizemember.php?member_ID_field=" + memberIDString)!));
+        self.WebView.loadRequest(NSURLRequest(URL: NSURL(string: memberIDString)!));
         
     }
     

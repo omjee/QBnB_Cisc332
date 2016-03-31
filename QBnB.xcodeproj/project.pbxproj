@@ -27,7 +27,6 @@
 		A2434FAF1CABA3BE0082FAEC /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */; };
 		A2434FB11CABA3F10082FAEC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB01CABA3F10082FAEC /* SearchViewController.swift */; };
 		A2434FB31CABA4100082FAEC /* MyPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB21CABA4100082FAEC /* MyPropertiesViewController.swift */; };
-		A2434FB51CABA4460082FAEC /* MyBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB41CABA4460082FAEC /* MyBookingViewController.swift */; };
 		A2434FB71CABAE350082FAEC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB61CABAE350082FAEC /* TabController.swift */; };
 		A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */; };
 		A25F89521CAB4382005CC592 /* TabsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A25F89511CAB4382005CC592 /* TabsStoryboard.storyboard */; };
@@ -37,6 +36,15 @@
 		A2DB31201CAC24BF000065A9 /* queensufly.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A2DB311F1CAC24BF000065A9 /* queensufly.jpg */; };
 		A2DB31231CAC41BD000065A9 /* MyReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB31221CAC41BD000065A9 /* MyReviewsTableViewController.swift */; };
 		A2DB31251CAC4224000065A9 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB31241CAC4224000065A9 /* ReviewTableViewCell.swift */; };
+		A2EE774F1CAD11A1009AFF04 /* AdminPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE774E1CAD11A1009AFF04 /* AdminPropertiesTableViewController.swift */; };
+		A2EE77511CAD11BA009AFF04 /* AdminPropertiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE77501CAD11BA009AFF04 /* AdminPropertiesTableViewCell.swift */; };
+		A2EE77531CAD11C7009AFF04 /* AdminProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE77521CAD11C7009AFF04 /* AdminProperties.swift */; };
+		A2EE77551CAD293A009AFF04 /* UserPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE77541CAD293A009AFF04 /* UserPropertiesTableViewController.swift */; };
+		A2EE77581CAD37F4009AFF04 /* BookingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE77571CAD37F4009AFF04 /* BookingDetailsViewController.swift */; };
+		A2EE775B1CAD532E009AFF04 /* MyBookingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE775A1CAD532E009AFF04 /* MyBookingsTableViewController.swift */; };
+		A2EE775D1CAD5347009AFF04 /* MyBookingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE775C1CAD5347009AFF04 /* MyBookingsTableViewCell.swift */; };
+		A2EE775F1CAD5353009AFF04 /* MyBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE775E1CAD5353009AFF04 /* MyBookings.swift */; };
+		A2EE77621CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE77611CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +70,6 @@
 		A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		A2434FB01CABA3F10082FAEC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A2434FB21CABA4100082FAEC /* MyPropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPropertiesViewController.swift; sourceTree = "<group>"; };
-		A2434FB41CABA4460082FAEC /* MyBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingViewController.swift; sourceTree = "<group>"; };
 		A2434FB61CABAE350082FAEC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		A25E2A351C9BCE9C00E3A464 /* ImgLookupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgLookupVC.swift; sourceTree = "<group>"; };
 		A25F89511CAB4382005CC592 /* TabsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -72,6 +79,15 @@
 		A2DB311F1CAC24BF000065A9 /* queensufly.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = queensufly.jpg; sourceTree = "<group>"; };
 		A2DB31221CAC41BD000065A9 /* MyReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReviewsTableViewController.swift; sourceTree = "<group>"; };
 		A2DB31241CAC4224000065A9 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		A2EE774E1CAD11A1009AFF04 /* AdminPropertiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPropertiesTableViewController.swift; sourceTree = "<group>"; };
+		A2EE77501CAD11BA009AFF04 /* AdminPropertiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPropertiesTableViewCell.swift; sourceTree = "<group>"; };
+		A2EE77521CAD11C7009AFF04 /* AdminProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminProperties.swift; sourceTree = "<group>"; };
+		A2EE77541CAD293A009AFF04 /* UserPropertiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPropertiesTableViewController.swift; sourceTree = "<group>"; };
+		A2EE77571CAD37F4009AFF04 /* BookingDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailsViewController.swift; sourceTree = "<group>"; };
+		A2EE775A1CAD532E009AFF04 /* MyBookingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingsTableViewController.swift; sourceTree = "<group>"; };
+		A2EE775C1CAD5347009AFF04 /* MyBookingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingsTableViewCell.swift; sourceTree = "<group>"; };
+		A2EE775E1CAD5353009AFF04 /* MyBookings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookings.swift; sourceTree = "<group>"; };
+		A2EE77611CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPropertiesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +152,10 @@
 				A21885591CACD6280033C599 /* MemberAdmin.swift */,
 				A218855B1CACD92C0033C599 /* AdminViewController.swift */,
 				A218855E1CACEA190033C599 /* MemberSummaryViewController.swift */,
+				A2EE774E1CAD11A1009AFF04 /* AdminPropertiesTableViewController.swift */,
+				A2EE77541CAD293A009AFF04 /* UserPropertiesTableViewController.swift */,
+				A2EE77501CAD11BA009AFF04 /* AdminPropertiesTableViewCell.swift */,
+				A2EE77521CAD11C7009AFF04 /* AdminProperties.swift */,
 			);
 			name = "Member Admin";
 			sourceTree = "<group>";
@@ -171,12 +191,13 @@
 		A25F89611CAB7662005CC592 /* Tab Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A2EE77601CAD5EDF009AFF04 /* My Properties */,
+				A2EE77591CAD516C009AFF04 /* My Bookings */,
 				A25F89511CAB4382005CC592 /* TabsStoryboard.storyboard */,
 				A2DB31211CAC41A4000065A9 /* My Account */,
 				A25F89621CAB780D005CC592 /* HomeTabViewController.swift */,
 				A2434FB01CABA3F10082FAEC /* SearchViewController.swift */,
 				A2434FB21CABA4100082FAEC /* MyPropertiesViewController.swift */,
-				A2434FB41CABA4460082FAEC /* MyBookingViewController.swift */,
 				A2434FB61CABAE350082FAEC /* TabController.swift */,
 			);
 			name = "Tab Screens";
@@ -185,6 +206,7 @@
 		A2DB31211CAC41A4000065A9 /* My Account */ = {
 			isa = PBXGroup;
 			children = (
+				A2EE77561CAD37DD009AFF04 /* Search */,
 				A21885541CACD4DD0033C599 /* Member Admin */,
 				A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */,
 				A2DB31221CAC41BD000065A9 /* MyReviewsTableViewController.swift */,
@@ -193,6 +215,32 @@
 				A21885521CACCF190033C599 /* EditAccountViewController.swift */,
 			);
 			name = "My Account";
+			sourceTree = "<group>";
+		};
+		A2EE77561CAD37DD009AFF04 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A2EE77571CAD37F4009AFF04 /* BookingDetailsViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		A2EE77591CAD516C009AFF04 /* My Bookings */ = {
+			isa = PBXGroup;
+			children = (
+				A2EE775A1CAD532E009AFF04 /* MyBookingsTableViewController.swift */,
+				A2EE775C1CAD5347009AFF04 /* MyBookingsTableViewCell.swift */,
+				A2EE775E1CAD5353009AFF04 /* MyBookings.swift */,
+			);
+			name = "My Bookings";
+			sourceTree = "<group>";
+		};
+		A2EE77601CAD5EDF009AFF04 /* My Properties */ = {
+			isa = PBXGroup;
+			children = (
+				A2EE77611CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift */,
+			);
+			name = "My Properties";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,21 +324,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				A218855C1CACD92C0033C599 /* AdminViewController.swift in Sources */,
+				A2EE77551CAD293A009AFF04 /* UserPropertiesTableViewController.swift in Sources */,
 				A25E2A361C9BCE9C00E3A464 /* ImgLookupVC.swift in Sources */,
 				A2DB31251CAC4224000065A9 /* ReviewTableViewCell.swift in Sources */,
 				A29826711C9BAAA500B16098 /* CreateAccountViewController.swift in Sources */,
+				A2EE77531CAD11C7009AFF04 /* AdminProperties.swift in Sources */,
+				A2EE774F1CAD11A1009AFF04 /* AdminPropertiesTableViewController.swift in Sources */,
+				A2EE77581CAD37F4009AFF04 /* BookingDetailsViewController.swift in Sources */,
 				A218855A1CACD6280033C599 /* MemberAdmin.swift in Sources */,
 				A2434FB11CABA3F10082FAEC /* SearchViewController.swift in Sources */,
 				A2DB31231CAC41BD000065A9 /* MyReviewsTableViewController.swift in Sources */,
 				A2434FAF1CABA3BE0082FAEC /* MyAccountViewController.swift in Sources */,
 				A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */,
 				A2434FB71CABAE350082FAEC /* TabController.swift in Sources */,
+				A2EE77621CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift in Sources */,
 				A2150AD41CAC9F0B00F0393C /* Review.swift in Sources */,
-				A2434FB51CABA4460082FAEC /* MyBookingViewController.swift in Sources */,
+				A2EE775B1CAD532E009AFF04 /* MyBookingsTableViewController.swift in Sources */,
 				A218855F1CACEA190033C599 /* MemberSummaryViewController.swift in Sources */,
+				A2EE775F1CAD5353009AFF04 /* MyBookings.swift in Sources */,
 				A21885531CACCF190033C599 /* EditAccountViewController.swift in Sources */,
+				A2EE775D1CAD5347009AFF04 /* MyBookingsTableViewCell.swift in Sources */,
 				A21885561CACD5E20033C599 /* MemberAdminTableViewController.swift in Sources */,
 				A2434FB31CABA4100082FAEC /* MyPropertiesViewController.swift in Sources */,
+				A2EE77511CAD11BA009AFF04 /* AdminPropertiesTableViewCell.swift in Sources */,
 				A212C9881C83F15B00D41956 /* AppDelegate.swift in Sources */,
 				A25F89631CAB780D005CC592 /* HomeTabViewController.swift in Sources */,
 				A21885581CACD5EF0033C599 /* MemberTableViewCell.swift in Sources */,
