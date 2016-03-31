@@ -165,7 +165,7 @@ class AdminPropertiesTableViewController: UITableViewController {
                             print(item.description);
                             
                             var aptnum, middleInitial : String;
-                            var rating : Float;
+                            var price, rating : Float;
                             
                             guard let firstName = item["first_name"] as? String else { print("failed first_name");break; }//
                             guard let lastName = item["last_name"] as? String else { print("failed last_name");break; }//
@@ -183,9 +183,16 @@ class AdminPropertiesTableViewController: UITableViewController {
                             
                             guard let streetNumber = item["street_number"] as? Int else { print("failed streetnumber");break; }
                             
-                            //guard let price = item["price"] as? Int else { print("failed price");break; }
+                            //guard let price = (item["price"] as! NSString).floatValue else { print("failed price");break; }
                             
-                            let price = 0;
+                            if let pr = item["price"] as? String
+                            {
+                                price = (pr as NSString).floatValue;
+                            }
+                            else
+                            {
+                                price = -1;
+                            }
                             
                             if let mi = item["middle_initial"] as? String
                             {
@@ -206,9 +213,9 @@ class AdminPropertiesTableViewController: UITableViewController {
                                 aptnum = "";
                             }
                             
-                            if let ar = item["AVG(rating)"] as? Float
+                            if let ar = item["AVG(rating)"] as? String
                             {
-                                rating = ar;
+                                rating = (ar as NSString).floatValue;
                             }
                             else
                             {
@@ -217,7 +224,7 @@ class AdminPropertiesTableViewController: UITableViewController {
                         
                             
                             
-                            let pro = AdminProperties(pid: String(propertyID), fname1: firstName, mi1: middleInitial, lname1: lastName, strnum: String(streetNumber), strname: streetName, aptnum1: String(aptnum), city1: city, province1: province, post: postal_code, bed: bedrooms, bath: bathrooms, price1: price, rating1: rating);
+                            let pro = AdminProperties(pid: String(propertyID), fname1: firstName, mi1: middleInitial, lname1: lastName, strnum: String(streetNumber), strname: streetName, aptnum1: String(aptnum), city1: city, province1: province, post: postal_code, bed: bedrooms, bath: bathrooms, price1: price, rating1: rating,enabled: true);
                             
                             self.properties += [pro];
                             

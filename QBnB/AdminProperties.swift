@@ -13,10 +13,12 @@ class AdminProperties{
     
     var propertyID, fname, mi, lname, streetnum, streetname, aptnum, city, province, postalcode : String;
     var bedrooms, bathrooms : Int;
-    var price : Int;
+    var price : Float;
     var rating : Float;
+    var isenabled : Bool;
     
-    init(pid : String, fname1 : String, mi1 : String, lname1 : String, strnum : String, strname : String, aptnum1 : String, city1 : String, province1 : String, post : String, bed : Int,bath : Int, price1 : Int, rating1 : Float)
+    
+    init(pid : String, fname1 : String, mi1 : String, lname1 : String, strnum : String, strname : String, aptnum1 : String, city1 : String, province1 : String, post : String, bed : Int,bath : Int, price1 : Float, rating1 : Float, enabled : Bool)
     {
         propertyID = pid;
         fname = fname1;
@@ -32,6 +34,7 @@ class AdminProperties{
         bathrooms = bath;
         price = price1;
         rating = rating1;
+        isenabled = enabled;
     }
     
     

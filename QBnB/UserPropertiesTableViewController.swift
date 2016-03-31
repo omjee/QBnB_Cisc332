@@ -85,7 +85,7 @@ class UserPropertiesTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return false;
+        return true
     }
     
 
@@ -124,12 +124,14 @@ class UserPropertiesTableViewController: UITableViewController {
         
         if segue.identifier == "ShowDetailsSegue"
         {
-            let dest = segue.destinationViewController as! BookingDetailsViewController;
+            if let dest = segue.destinationViewController as? BookingDetailsViewController
+            {
             if let cell = sender as? AdminPropertiesTableViewCell
             {
                 let index = tableView.indexPathForCell(cell)!.row;
                 dest.propertyID = properties[index].propertyID;
                 dest.dateString = dateString;
+            }
             }
             
         }
@@ -139,7 +141,13 @@ class UserPropertiesTableViewController: UITableViewController {
     func getProperties()
     {
         
+        
+        
         properties.removeAll();
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData();
+        }
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://Mitchells-iMac.local/search.php")!);
         request.HTTPBody = String("searchBtn=yolo&" + thePostString).dataUsingEncoding(NSUTF8StringEncoding);
@@ -168,7 +176,7 @@ class UserPropertiesTableViewController: UITableViewController {
                             print(item.description);
                             
                             var aptnum, middleInitial : String;
-                            var rating : Float;
+                            var rating, price : Float;
                             
                             guard let firstName = item["first_name"] as? String else { print("failed first_name");break; }//
                             guard let lastName = item["last_name"] as? String else { print("failed last_name");break; }//
@@ -188,7 +196,14 @@ class UserPropertiesTableViewController: UITableViewController {
                             
                             //guard let price = item["price"] as? Int else { print("failed price");break; }
                             
-                            let price = 0;
+                            if let pr = item["price"] as? String
+                            {
+                                price = (pr as NSString).floatValue;
+                            }
+                            else
+                            {
+                                price = -1;
+                            }
                             
                             if let mi = item["middle_initial"] as? String
                             {
@@ -209,9 +224,9 @@ class UserPropertiesTableViewController: UITableViewController {
                                 aptnum = "";
                             }
                             
-                            if let ar = item["AVG(rating)"] as? Float
+                            if let ar = item["AVG(rating)"] as? String
                             {
-                                rating = ar;
+                                rating = (ar as NSString).floatValue;
                             }
                             else
                             {
@@ -220,7 +235,7 @@ class UserPropertiesTableViewController: UITableViewController {
                         
                             
                             
-                            let pro = AdminProperties(pid: String(propertyID), fname1: firstName, mi1: middleInitial, lname1: lastName, strnum: String(streetNumber), strname: streetName, aptnum1: String(aptnum), city1: city, province1: province, post: postal_code, bed: bedrooms, bath: bathrooms, price1: price, rating1: rating);
+                            let pro = AdminProperties(pid: String(propertyID), fname1: firstName, mi1: middleInitial, lname1: lastName, strnum: String(streetNumber), strname: streetName, aptnum1: String(aptnum), city1: city, province1: province, post: postal_code, bed: bedrooms, bath: bathrooms, price1: price, rating1: rating, enabled: true);
                             
                             self.properties += [pro];
                             

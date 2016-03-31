@@ -45,6 +45,8 @@
 		A2EE775D1CAD5347009AFF04 /* MyBookingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE775C1CAD5347009AFF04 /* MyBookingsTableViewCell.swift */; };
 		A2EE775F1CAD5353009AFF04 /* MyBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE775E1CAD5353009AFF04 /* MyBookings.swift */; };
 		A2EE77621CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE77611CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift */; };
+		A2EE77641CAD5F48009AFF04 /* EditPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE77631CAD5F48009AFF04 /* EditPropertyViewController.swift */; };
+		A2EE77681CAD676E009AFF04 /* MainPropertiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE77671CAD676E009AFF04 /* MainPropertiesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		A2EE775C1CAD5347009AFF04 /* MyBookingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingsTableViewCell.swift; sourceTree = "<group>"; };
 		A2EE775E1CAD5353009AFF04 /* MyBookings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookings.swift; sourceTree = "<group>"; };
 		A2EE77611CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPropertiesTableViewController.swift; sourceTree = "<group>"; };
+		A2EE77631CAD5F48009AFF04 /* EditPropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPropertyViewController.swift; sourceTree = "<group>"; };
+		A2EE77671CAD676E009AFF04 /* MainPropertiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPropertiesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				A2EE77611CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift */,
+				A2EE77631CAD5F48009AFF04 /* EditPropertyViewController.swift */,
+				A2EE77671CAD676E009AFF04 /* MainPropertiesTableViewCell.swift */,
 			);
 			name = "My Properties";
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				A2434FAF1CABA3BE0082FAEC /* MyAccountViewController.swift in Sources */,
 				A212C98A1C83F15B00D41956 /* ViewController.swift in Sources */,
 				A2434FB71CABAE350082FAEC /* TabController.swift in Sources */,
+				A2EE77641CAD5F48009AFF04 /* EditPropertyViewController.swift in Sources */,
 				A2EE77621CAD5EF7009AFF04 /* MyPropertiesTableViewController.swift in Sources */,
 				A2150AD41CAC9F0B00F0393C /* Review.swift in Sources */,
 				A2EE775B1CAD532E009AFF04 /* MyBookingsTableViewController.swift in Sources */,
@@ -348,6 +355,7 @@
 				A2434FB31CABA4100082FAEC /* MyPropertiesViewController.swift in Sources */,
 				A2EE77511CAD11BA009AFF04 /* AdminPropertiesTableViewCell.swift in Sources */,
 				A212C9881C83F15B00D41956 /* AppDelegate.swift in Sources */,
+				A2EE77681CAD676E009AFF04 /* MainPropertiesTableViewCell.swift in Sources */,
 				A25F89631CAB780D005CC592 /* HomeTabViewController.swift in Sources */,
 				A21885581CACD5EF0033C599 /* MemberTableViewCell.swift in Sources */,
 			);
