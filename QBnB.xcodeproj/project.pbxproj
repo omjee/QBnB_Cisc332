@@ -22,6 +22,7 @@
 		A21885581CACD5EF0033C599 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21885571CACD5EF0033C599 /* MemberTableViewCell.swift */; };
 		A218855A1CACD6280033C599 /* MemberAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21885591CACD6280033C599 /* MemberAdmin.swift */; };
 		A218855C1CACD92C0033C599 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218855B1CACD92C0033C599 /* AdminViewController.swift */; };
+		A218855F1CACEA190033C599 /* MemberSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218855E1CACEA190033C599 /* MemberSummaryViewController.swift */; };
 		A220F92D1C9A8030000F8E50 /* QBnB.png in Resources */ = {isa = PBXBuildFile; fileRef = A220F92C1C9A8030000F8E50 /* QBnB.png */; };
 		A2434FAF1CABA3BE0082FAEC /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */; };
 		A2434FB11CABA3F10082FAEC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2434FB01CABA3F10082FAEC /* SearchViewController.swift */; };
@@ -56,6 +57,7 @@
 		A21885571CACD5EF0033C599 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		A21885591CACD6280033C599 /* MemberAdmin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberAdmin.swift; sourceTree = "<group>"; };
 		A218855B1CACD92C0033C599 /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		A218855E1CACEA190033C599 /* MemberSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberSummaryViewController.swift; sourceTree = "<group>"; };
 		A220F92C1C9A8030000F8E50 /* QBnB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QBnB.png; path = "Image Assets/QBnB.png"; sourceTree = "<group>"; };
 		A2434FAE1CABA3BE0082FAEC /* MyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		A2434FB01CABA3F10082FAEC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				A21885571CACD5EF0033C599 /* MemberTableViewCell.swift */,
 				A21885591CACD6280033C599 /* MemberAdmin.swift */,
 				A218855B1CACD92C0033C599 /* AdminViewController.swift */,
+				A218855E1CACEA190033C599 /* MemberSummaryViewController.swift */,
 			);
 			name = "Member Admin";
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				A2434FB71CABAE350082FAEC /* TabController.swift in Sources */,
 				A2150AD41CAC9F0B00F0393C /* Review.swift in Sources */,
 				A2434FB51CABA4460082FAEC /* MyBookingViewController.swift in Sources */,
+				A218855F1CACEA190033C599 /* MemberSummaryViewController.swift in Sources */,
 				A21885531CACCF190033C599 /* EditAccountViewController.swift in Sources */,
 				A21885561CACD5E20033C599 /* MemberAdminTableViewController.swift in Sources */,
 				A2434FB31CABA4100082FAEC /* MyPropertiesViewController.swift in Sources */,

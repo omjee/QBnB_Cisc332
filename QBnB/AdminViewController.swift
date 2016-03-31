@@ -10,6 +10,14 @@ import UIKit
 
 class AdminViewController: UIViewController {
 
+    @IBOutlet var FirstNameTextField: UITextField!
+    @IBOutlet var MidInitialTextField: UITextField!
+    @IBOutlet var LastNameTextField: UITextField!
+    @IBOutlet var EmailTextField: UITextField!
+    @IBOutlet var PhoneTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,8 +35,18 @@ class AdminViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        
+        if segue.identifier == "FindMemberSegue"
+        {
+            let vc = segue.destinationViewController as! MemberAdminTableViewController;
+            
+            vc.thePostString = "first_name_field=" + FirstNameTextField.text! + "&middle_initial_field=" + MidInitialTextField.text!
+            vc.thePostString += "&last_name_field=" + LastNameTextField.text! + "&email_field=" + EmailTextField.text! + "&primary_phone=" + PhoneTextField.text!;
+            
+        }
+        
+        
     }
     
 

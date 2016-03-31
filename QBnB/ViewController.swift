@@ -195,6 +195,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             print("couldnt get image data");
                         }
                     }
+                    else
+                    {
+                        AccountProperties.profilePic = UIImage(named: "ic_account_box_black_48dp");
+                    }
                     
                     if let fname = item["first_name"] as? String
                     {
