@@ -27,8 +27,15 @@ class MyAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         self.AccountImage.image = AccountProperties.profilePic;
+        
+        
+        
         self.NameLabel.text = AccountProperties.fname + " " + AccountProperties.mi + " " + AccountProperties.lname;
+        
+        
+        
         MoreDetailsLabel.text = "ID No. " + AccountProperties.acc_id;
         // Do any additional setup after loading the view.
         
@@ -75,6 +82,91 @@ class MyAccountViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func ChangePasswordButton_Click(sender: AnyObject) {
+    
+        let chps = UIAlertController(title: "Change Password", message: "Please enter your current and new passwords.", preferredStyle: .Alert);
+        
+        chps.addTextFieldWithConfigurationHandler{(textField) in
+            textField.secureTextEntry = true;
+            textField.placeholder = "Current Password";
+        }
+        
+        chps.addTextFieldWithConfigurationHandler{(textField) in
+            textField.secureTextEntry = true;
+            textField.placeholder = "New Password";
+        }
+        
+        let confirmAction = UIAlertAction(title: "Change Password", style: .Default)
+        {(action) in
+            
+            
+            let postString = "passValidate=" + chps.textFields![0].text! + "&newPass=" + chps.textFields![1].text!;
+            
+            let request = NSMutableURLRequest(URL: NSURL(string:"http://Mitchells-iMac.local/changepassword.php")!)
+            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+            request.HTTPMethod = "POST"
+
+            let task = URLSesh.loginSession.dataTaskWithRequest(request){ (data,response,error) in
+            
+                if let HTTPResponse = response as? NSHTTPURLResponse
+                {
+                    let statusCode = HTTPResponse.statusCode;
+                    
+                    let pass_response = UIAlertController(title: "", message: "", preferredStyle: .Alert);
+                    
+                    
+                    print(statusCode.description);
+                    
+                    if(statusCode != 200)
+                    {
+                        pass_response.title = "Error" + String(statusCode);
+                        pass_response.message = "Couldn't change password.\n\n" + String(data: data!,encoding: NSUTF8StringEncoding)!;
+                    }
+                    else
+                    {
+                        pass_response.title = "Success";
+                        pass_response.message = "Successfully changed password.";
+                    }
+                
+                    let closeAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil);
+                    
+                    pass_response.addAction(closeAction);
+                    
+                    dispatch_async(dispatch_get_main_queue())
+                    {
+                        self.presentViewController(pass_response, animated: true, completion: nil);
+                    }
+                    
+                    
+                
+                }//end let response
+                
+                
+            }//close task
+            
+            task.resume();
+            
+            
+        }//close action
+        
+        
+        chps.addAction(confirmAction);
+        chps.addAction(UIAlertAction(title:"Cancel",style: .Cancel,handler:nil));
+        
+        
+        dispatch_async(dispatch_get_main_queue())
+            {
+                self.presentViewController(chps, animated: true, completion: nil);
+            }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     @IBAction func LogOutButton(sender: AnyObject) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://Mitchells-iMac.local/logout.php")!);

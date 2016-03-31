@@ -210,6 +210,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     {
                         AccountProperties.mi = mi;
                     }
+                    else
+                    {
+                        AccountProperties.mi = "";
+                    }
 
                     
                 }

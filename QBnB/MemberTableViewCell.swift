@@ -1,5 +1,5 @@
 //
-//  ReviewTableViewCell.swift
+//  MemberTableViewCell.swift
 //  QBnB
 //
 //  Created by Mitchell Waite on 2016-03-30.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ReviewTableViewCell: UITableViewCell {
+class MemberTableViewCell: UITableViewCell {
 
-    @IBOutlet var AddressLabel: UILabel!
-    @IBOutlet var RatingLabel: UILabel!
-    @IBOutlet var ReviewLabel: UITextView!
-    @IBOutlet var ResponseLabel: UITextView!
+    @IBOutlet var MemberPicture: UIImageView!
+    @IBOutlet var AdSuLabel: UILabel!
+    @IBOutlet var NameLabel: UILabel!
+    @IBOutlet var EmailLabel: UILabel!
+    @IBOutlet var PhoneLabel: UILabel!
     
     
     
